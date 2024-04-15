@@ -1,13 +1,11 @@
 import { NextResponse } from "next/server";
 import dotenv from "dotenv";
-import { headers } from "next/headers";
 
 dotenv.config();
 
 export async function GET() {
   const ACESS_TOKEN = process.env.GITHUB_PERSONAL_ACCESS_TOKEN;
   const USER_NAME = process.env.GITHUB_USERNAME;
-
   const reqBodyContent = {
     query: `{
         user(login: "${USER_NAME}") {
@@ -25,7 +23,6 @@ export async function GET() {
         }
       }`,
   };
-
   const reqConfig = {
     method: "POST",
     headers: {
