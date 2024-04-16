@@ -2,7 +2,7 @@ import { ACCESS_TOKEN, GITHUB_URI, USERNAME } from "@/config";
 import { NextResponse } from "next/server";
 
 
-export async function GET() {
+export const GET = async () => {
   const reqBodyContent = {
     query: `{
         user(login: "${USERNAME}") {
